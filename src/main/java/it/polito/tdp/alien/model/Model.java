@@ -32,10 +32,15 @@ public class Model {
 			s="Erore di inserimento";
 			return s;
 		}
-		if(dizionario.containsKey(string))
-			s="GIA INSERITO";
-		else
+		if(dizionario.containsKey(string)) {
+			String ss=new String();
+			ss=dizionario.get(string)+" ";
+			ss+=string2;
+			dizionario.put(string, ss);
+		}
+		else {
 			dizionario.put(string, string2);
+		}
 		return s;
 	}
 	
