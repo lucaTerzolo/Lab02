@@ -16,6 +16,9 @@ public class Model {
 		String s=new String();
 		String it=string;
 		if(!valido(string)) {
+			if(string.contains("?")) {
+				wildcard(string);
+			}
 			s="Erore di inserimento";
 			return s;
 		}
@@ -55,5 +58,17 @@ public class Model {
 		
 		}
 		return prova;
+	}
+	public String wildcard(String string) {
+		int cnt=0;
+		for(int i=0;i<string.length();i++) {
+			if(string.charAt(i)=='?') {
+				cnt++;
+			}
+		}
+		if(cnt==1) {
+			
+		}
+		return string;
 	}
 }	
